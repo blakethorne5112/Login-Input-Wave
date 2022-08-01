@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+/*Ctrl+K+U to comment / uncomment*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: steelblue;
+    color: white;
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px 40px;
+    border-radius: 5px;
+    /*Background makes it a slightly darker version of pre-existing background*/
+    /* padding extends the 'box' in the middle outside of just the elements inside */
+    /* border radius rounds the edges by the amount specified */
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container a {
+    text-decoration: none;
+    color: lightblue;
+    /*Changed the Register to be from standard looking link to a custom look*/
+}
+
+.btn {
+    cursor: pointer;
+    /* Makes it look like a link to be pressed */
+    display: inline-block;
+    width: 100%;
+    background-color: lightblue;
+    padding: 15px;
+    font-family: inherit;
+    /* Inherits font of Muli from body */
+    font-size: 16px;
+    border: 0;
+    border-radius: 5px;
+    /* Once again removes border and adds rounded edges */
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:active {
+    transform: scale(0.98);
+    /* Makes the button very slightly smaller to make it look like pressing */
+}
+
+.text {
+    margin-top: 30px;
+    /* Controls the bottom text - "Don't have an account?" */
+}
+
+.form-control {
+    position: relative;
+    margin: 20px 0px 40px;
+    width: 300px;
+    /* The entry background is no longer just a white box, has now been customised and position relative to screen size*/
+}
+
+.form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px white solid;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: white;
+    /* Changes how it looks upon inputting data into the fields of Email and Pass */
+}
+
+.form-control input:focus, .form-control input:valid {
+    outline: 0;
+    /* Removes the box outline that shows when a section has been left empty and a submission was attempted */
+    border-bottom-color: lightblue;
+    /* bottom line for text changes color on clicking into the field */
+}
+
+.form-control label {
+    position: absolute;
+    /* The text Email and Password used to move out of the way of the text field, they are now positioned in that one spot. */
+    top: 15px;
+    left: 0;
+    /* Ordinarily it would be easier to just set placeholder text, but in this instance the text is going to move out of the way after implementing JavaScript. */
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* cubic bezier allows for variable speeds of transition */
+}
+
+.form-control input:focus + label span, .form-control input:valid + label span {
+    color: lightblue;
+    /* text changes color on clicking into the field */
+    transform: translateY(-30px);
+    /* text shifts upwards (neg y = up, pos y = down) upon clicking in */
+}
